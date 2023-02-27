@@ -15,4 +15,19 @@
         android:name="com.view.main.PriceChangeFragment"
         android:label="fragment_price_change"
         tools:layout="@layout/fragment_price_change" />
+    <fragment
+        android:id="@+id/coinInfoSeeFragment"
+        android:name="com.view.main.setting.CoinInfoSeeFragment"
+        android:label="fragment_coin_info_see"
+        tools:layout="@layout/fragment_coin_info_see" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.view.main.setting.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/tradeHistoryFragment"
+        android:name="com.view.main.setting.TradeHistoryFragment"
+        android:label="fragment_trade_history"
+        tools:layout="@layout/fragment_trade_history" />
 </navigation>

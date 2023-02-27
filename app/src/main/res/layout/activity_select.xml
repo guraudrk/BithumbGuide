@@ -15,14 +15,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="요즘 어떤 코인에\n마음을 뺏겼나요?"
-            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:text="코인을 선택해주세요. 변동률은 24시간 기준입니다.\n(추후 메인 화면에서 변동 가능합니다.)\n출저:빗썸 api"
             android:textColor="@color/black"
-            android:textSize="30sp"
-            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+           />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -42,16 +43,17 @@
         android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/gotoMainButton"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@color/blue"
+            android:background="@drawable/button_round"
             android:gravity="center"
             android:layout_margin="20dp"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:text="선택 완료"
+            android:text="메인  화면으로 이동"
             />
 
     </LinearLayout>

@@ -23,6 +23,9 @@ class SelectRVAdapter(val context : Context, val coinPriceList : List<CurrentPri
             val coinName : TextView = view.findViewById(R.id.coinName)
             val coinPriceUpDown : TextView = view.findViewById(R.id.coinPriceUpDown)
             val likeImage : ImageView = view.findViewById(R.id.likeBtn)
+
+            //코인 가격의 변동률을 보여준다.
+            val pricechange : TextView = view.findViewById(R.id.updownnumber)
         }
 
 
@@ -34,6 +37,8 @@ class SelectRVAdapter(val context : Context, val coinPriceList : List<CurrentPri
 
         val fluctate_24H = coinPriceList[position].coinInfo.fluctate_24H
 
+        //변동률을 나타내주는 코드이다.
+        holder.pricechange.text = coinPriceList[position].coinInfo.fluctate_rate_24H
 
 
         //해당 부분에 마이너스가 들어있으면 하락이라고 뜨게 한다!
@@ -41,11 +46,13 @@ class SelectRVAdapter(val context : Context, val coinPriceList : List<CurrentPri
         if(fluctate_24H.contains("-")){
             holder.coinPriceUpDown.text = "하락입니다."
             holder.coinPriceUpDown.setTextColor(Color.parseColor("#114fed"))
+            holder.pricechange.setTextColor(Color.parseColor("#114fed"))
         }
+
         else{
             holder.coinPriceUpDown.text="상승입니다."
             holder.coinPriceUpDown.setTextColor(Color.parseColor("#ed2e11"))
-
+            holder.pricechange.setTextColor(Color.parseColor("#ed2e11"))
         }
 
 
@@ -62,9 +69,9 @@ class SelectRVAdapter(val context : Context, val coinPriceList : List<CurrentPri
         //리사이클러뷰의 중복을 막기 위한 코드이다.
         if(selectedCoinList.contains(currentCoin)){
 
-            likeImage.setImageResource(R.drawable.like_red)
+            likeImage.setImageResource(R.drawable.star_selected)
         }else{
-            likeImage.setImageResource(R.drawable.like_grey)
+            likeImage.setImageResource(R.drawable.star_unselected)
 
         }
 
@@ -76,13 +83,13 @@ class SelectRVAdapter(val context : Context, val coinPriceList : List<CurrentPri
             //이미 like한 놈을 해지
             if(selectedCoinList.contains(currentCoin)){
                 selectedCoinList.remove(currentCoin)
-                likeImage.setImageResource(R.drawable.like_grey)
+                likeImage.setImageResource(R.drawable.star_unselected)
             }
 
             else
             {
                 selectedCoinList.add(currentCoin)
-                likeImage.setImageResource(R.drawable.like_red)
+                likeImage.setImageResource(R.drawable.star_selected)
             }
 
 

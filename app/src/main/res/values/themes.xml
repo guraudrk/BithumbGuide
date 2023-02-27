@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.Coco" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/red</item>
-        <item name="colorPrimaryVariant">@color/red</item>
+        <item name="colorPrimary">@color/orange</item>
+        <item name="colorPrimaryVariant">@color/orange</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -16,8 +16,7 @@
     </style>
 
     <style name="Theme.Coco.splash" parent="Theme.SplashScreen">
-        <item name="windowSplashScreenBackground">@color/red</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/graph</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/bithumblogosmall</item>
         <item name="postSplashScreenTheme">@style/Theme.Coco</item>
     </style>
 

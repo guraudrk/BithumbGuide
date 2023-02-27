@@ -40,8 +40,11 @@ class SelectActivity : AppCompatActivity() {
         viewModel.getCurrentCoinList()
         viewModel.currentPriceResult.observe(this, Observer{
 
+
+            //위에서 리스트를 받아왔기 때문에 adapter의 안에 it을 쓸 수 있다.
             selectRVAdapter = SelectRVAdapter(this,it)
 
+            //리사이클러뷰의 어뎁터를 연결한다.
             binding.coinListRV.adapter = selectRVAdapter
             //binding을 쓴다.
 
@@ -55,7 +58,7 @@ class SelectActivity : AppCompatActivity() {
 
 
         //mainactivity로 이동
-        binding.laterTextArea.setOnClickListener{
+        binding.gotoMainButton.setOnClickListener{
 
 
             viewModel.setUpFirstFlag()

@@ -52,6 +52,7 @@ class PriceListUpDownRVAdapter(val context: Context, val dataSet : List<UpDownDa
              holder.coinPriceUpDown.setTextColor(Color.parseColor("#ed2e11"))
          }
 
+
         //가격을 나타낸다.
         //자연수 기준으로 가격을 자르고 싶다면
         //holder.price.text = dataSet[position].upDownPrice.split(".")[0]을 써라.
