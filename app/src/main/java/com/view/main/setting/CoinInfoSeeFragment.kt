@@ -113,14 +113,14 @@ class CoinInfoSeeFragment : Fragment() {
                      binding.minPrice.text = coin.coinInfo.min_price + "원"
                      binding.maxPrice.text = coin.coinInfo.max_price + "원"
                      binding.unitsTraded.text = coin.coinInfo.units_traded + "개"
-                     binding.accTradeValue.text = coin.coinInfo.acc_trade_value + "개"
+                     binding.accTradeValue.text = coin.coinInfo.acc_trade_value + "원"
                      binding.prevClosingPrice.text = coin.coinInfo.prev_closing_price + "원"
                      binding.unitsTraded24H.text = coin.coinInfo.units_traded_24H + "개"
-                     binding.accTradeValue24H.text = coin.coinInfo.acc_trade_value_24H + "개"
+                     binding.accTradeValue24H.text = coin.coinInfo.acc_trade_value_24H + "원"
                      binding.fluctate24H.text = coin.coinInfo.fluctate_24H + "원"
                      binding.fluctateRate24H.text = coin.coinInfo.fluctate_rate_24H + "%"
                      //리스트에 있는지없는지를 확인해주는 변수를 설정한다.
-                     Toast.makeText(context,"정보 불러오기에 성공했습니다..",Toast.LENGTH_SHORT).show()
+                     Toast.makeText(context,"정보 불러오기에 성공했습니다.",Toast.LENGTH_SHORT).show()
                      inornot = true
                  }
                 }

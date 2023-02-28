@@ -29,11 +29,12 @@
             android:id="@+id/btn_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="현재가 조회" />
+            android:text="조회"
+            />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="30dp"
+
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal">

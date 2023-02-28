@@ -30,7 +30,7 @@
             android:id="@+id/btn_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="현재가 조회" />
+            android:text="조회" />
     </LinearLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -52,11 +52,14 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-
-        android:id="@+id/tradeHistoryRV"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tradeHistoryRV"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </ScrollView>
 
 </LinearLayout>

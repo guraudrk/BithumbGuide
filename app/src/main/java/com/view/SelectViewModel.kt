@@ -1,7 +1,5 @@
 package com.view
 
-import android.content.Context
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,8 +9,7 @@ import com.example.coco.dataModel.CurrentPrice
 import com.example.coco.dataModel.CurrentPriceResult
 import com.example.coco.dataModel.RecentPriceData
 import com.example.coco.dataModel.dataStore.MyDataStore
-import com.example.coco.dataModel.dataStore.TradeHistoryResult
-import com.example.coco.network.model.RecentCoinPriceList
+import com.example.coco.dataModel.TradeHistoryResult
 import com.example.coco.network.repository.DBRepository
 import com.example.coco.network.repository.NetWorkRepository
 import com.google.gson.Gson
@@ -90,7 +87,7 @@ class SelectViewModel : ViewModel() {
 
 
     //체결내역에 관한 정보를 가져오는 코루틴을 정의한다.
-    fun getInterestCoinPriceData(coin: String) = viewModelScope.launch {
+    fun getInterestCoinPriceData(coin: String) = viewModelScope.launch(Dispatchers.IO) {
         val result = netWorkRepository.getInterestCoinPriceData(coin)
 
         tradeHistoryList = ArrayList()
@@ -109,8 +106,9 @@ class SelectViewModel : ViewModel() {
 
             //우리가 정의한 리스트에 값을 추가한다.
             tradeHistoryList.add(tradeHistoryList1)
+            Timber.d("체결내역 성공")
         } catch (e: java.lang.Exception) {
-
+            Timber.d("체결내역을 가져오는데 오류가 발생")
 
         }
 

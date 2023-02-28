@@ -30,7 +30,13 @@ class GetCoinPriceRecentContractedWorkManager(val context : Context,workerParame
 //1.우리가 관심있어하는 코인 리스트를 가져와서
 suspend fun getAllInterestSelectedCoinData(){
 
+
+    //흥미 있는 코인들
     val selectedCoinList = dbRepository.getAllInterestSelectedCoinData()
+
+
+    //전체 코인들
+
 
     val timeStamp = Calendar.getInstance().time
 

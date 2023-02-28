@@ -5,13 +5,11 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coco.R
-import com.example.coco.dataModel.CurrentPriceResult
-import com.example.coco.dataModel.dataStore.TradeHistoryResult
+import com.example.coco.dataModel.TradeHistoryResult
 
 class TradeHistoryRVAdpater(val context : Context, val coinPriceList : List<TradeHistoryResult>) :
     RecyclerView.Adapter<TradeHistoryRVAdpater.ViewHolder>(){

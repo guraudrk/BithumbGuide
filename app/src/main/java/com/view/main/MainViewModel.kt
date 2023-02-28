@@ -76,8 +76,7 @@ class MainViewModel :ViewModel() {
 
 
 
-    //fun findDataOfCoinInfoSEE
-    //coininfosee의 데이터를 찾아서 보여주거나, 식별하는 함수이다.
+
 
 
 
