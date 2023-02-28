@@ -90,6 +90,8 @@ class SelectViewModel : ViewModel() {
     fun getInterestCoinPriceData(coin: String) = viewModelScope.launch(Dispatchers.IO) {
         val result = netWorkRepository.getInterestCoinPriceData(coin)
 
+
+        //함수를 호출할 때마다 새롭게 정의해야 데이터가 쌓이지 않는다.
         tradeHistoryList = ArrayList()
 
 
@@ -100,20 +102,23 @@ class SelectViewModel : ViewModel() {
         try {
             val gson = Gson()
             val gsonToJson = gson.toJson(result.data)
+
             val gsonFromJson = gson.fromJson(gsonToJson, RecentPriceData::class.java)
 
             val tradeHistoryList1 = TradeHistoryResult(coin, gsonFromJson)
 
             //우리가 정의한 리스트에 값을 추가한다.
             tradeHistoryList.add(tradeHistoryList1)
-            Timber.d("체결내역 성공")
+            Timber.d("체결내역 불러오기 성공")
         } catch (e: java.lang.Exception) {
             Timber.d("체결내역을 가져오는데 오류가 발생")
+
 
         }
 
         //최종적으로 라이브데이터에 저장한다.
-        _tradeHistoryResult.value = tradeHistoryList
+        //postValue를 설정하지 않으면 오류가 난다.
+        _tradeHistoryResult.postValue(tradeHistoryList)
 
     }
 

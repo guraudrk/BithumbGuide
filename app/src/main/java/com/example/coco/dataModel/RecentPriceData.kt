@@ -12,5 +12,4 @@ data class RecentPriceData (
     val units_traded : String,
     val price : String,
     val total : String
-
-        )
+)

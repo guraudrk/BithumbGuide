@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
@@ -20,6 +21,7 @@ import com.example.coco.network.repository.NetWorkRepository
 import com.view.SelectViewModel
 import com.view.adapter.SelectRVAdapter
 import com.view.adapter.TradeHistoryRVAdpater
+import com.view.main.MainViewModel
 
 
 class TradeHistoryFragment : Fragment() {
@@ -32,6 +34,7 @@ class TradeHistoryFragment : Fragment() {
 
     //viewModel을 추가한다. 모델은 SelectViewModel이다.
     val viewModel: SelectViewModel by viewModels()
+    private val viewModel1 : MainViewModel by activityViewModels()
 
     //어뎁터를 선언한다.
     private lateinit var TradeAdapter: TradeHistoryRVAdpater
@@ -58,12 +61,13 @@ class TradeHistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //코인의 리스트를 가져온다.
-        viewModel.getCurrentCoinList()
-        val coin1 = binding.coinNmHistory.text.toString().toUpperCase()
+        viewModel1.getAllInterestCoinData()
+
+
         //현재가 조회를 누르면 생기는 일
         binding.btnSearch.setOnClickListener {
 
-
+            val coin1 : String = binding.coinNmHistory.text.toString()
             //이 코드 안이 문제이다!
 
             //버튼을 누르면 기존 rv를 초기화해야 새로운 데이터가 잘 나온다.
@@ -83,8 +87,10 @@ class TradeHistoryFragment : Fragment() {
                 //입력한 코인의 이름을 인스턴스로 받아온다.(문자는 반드시 대문자로!!)
 
 
-                if (coin.equals(coin1)) {
-                    viewModel.getInterestCoinPriceData(coin1)
+
+                val cointoupper = coin1.toUpperCase()
+                if (coin.coinName.equals(cointoupper)) {
+                    viewModel.getInterestCoinPriceData(cointoupper)
 
                     //observe에 따라 this인지 viewLifecycleOwner인지 다를 수 있기 때문에 조심하자.
                     viewModel.tradeHistoryResult.observe(viewLifecycleOwner, Observer {

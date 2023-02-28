@@ -66,6 +66,11 @@ class PriceChangeFragment : Fragment() {
             binding.price45m.adapter = priceListUpDownRVAdapter
             binding.price45m.layoutManager = LinearLayoutManager(requireContext())
         })
+        viewModel.arr1hour.observe(viewLifecycleOwner, Observer {
+            val priceListUpDownRVAdapter = PriceListUpDownRVAdapter(requireContext(),it)
+            binding.price1hour.adapter = priceListUpDownRVAdapter
+            binding.price1hour.layoutManager = LinearLayoutManager(requireContext())
+        })
     }
 
     override fun onDestroy() {

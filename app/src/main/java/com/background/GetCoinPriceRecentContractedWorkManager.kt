@@ -26,6 +26,12 @@ class GetCoinPriceRecentContractedWorkManager(val context : Context,workerParame
         return Result.success()
     }
 
+    //a.전체 코인 데이터를 가져옴
+    val typedcoin = dbRepository.getAllInterestCoinData()
+
+    //b.타이핑한 코인이 전체 코인 데이터 안에 있는지 확인
+
+
 
 //1.우리가 관심있어하는 코인 리스트를 가져와서
 suspend fun getAllInterestSelectedCoinData(){
@@ -33,6 +39,7 @@ suspend fun getAllInterestSelectedCoinData(){
 
     //흥미 있는 코인들
     val selectedCoinList = dbRepository.getAllInterestSelectedCoinData()
+
 
 
     //전체 코인들
