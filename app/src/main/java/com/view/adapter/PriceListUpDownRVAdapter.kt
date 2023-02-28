@@ -43,12 +43,14 @@ class PriceListUpDownRVAdapter(val context: Context, val dataSet : List<UpDownDa
 
         //상승인지 아닌지에 따라 텍스트와 컬러를 설정한다.
          if(dataSet[position].upDownPrice.contains("-")){
-             holder.coinPriceUpDown.text = "하락"
+             holder.coinPriceUpDown.text = "하락중"
+             holder.price.setTextColor(Color.parseColor("#114fed"))
              holder.coinPriceUpDown.setTextColor(Color.parseColor("#114fed"))
          }
 
         else{
-            holder.coinPriceUpDown.text="상승"
+            holder.coinPriceUpDown.text="상승중"
+             holder.price.setTextColor(Color.parseColor("#ed2e11"))
              holder.coinPriceUpDown.setTextColor(Color.parseColor("#ed2e11"))
          }
 

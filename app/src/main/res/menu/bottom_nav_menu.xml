@@ -4,7 +4,7 @@
 
     <item
         android:id="@+id/coinListFragment"
-        android:title="코인 추가/삭제"
+        android:title="즐겨찾기 추가/삭제"
         android:icon="@drawable/ic_baseline_add_24"
         />
 

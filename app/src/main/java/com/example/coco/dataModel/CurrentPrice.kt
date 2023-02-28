@@ -2,6 +2,8 @@ package com.example.coco.dataModel
 
 data class CurrentPrice (
 
+        //각 항목 설명
+
         val opening_price : String,
         val closing_price : String,
         val min_price : String,

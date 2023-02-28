@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.db.entity.InterestCoinEntity
 import com.example.coco.dataModel.UpDownDataSet
 import com.example.coco.network.repository.DBRepository
+import com.example.coco.network.repository.NetWorkRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,14 +19,14 @@ class MainViewModel :ViewModel() {
 
     //db에서 데이터를 가져온다.
     private val dbRepository =DBRepository()
-
+    private val NetWorkRepository = NetWorkRepository()
 
     //받아온 데이터를 넣어주는 부분이다.
     lateinit var selectedCoinList : LiveData<List<InterestCoinEntity>>
 
 
 
-    //15,30,45분전에 대한 livedata를 마련한다.
+    //15,30,45분전,1시간 전에 대한 livedata를 마련한다.
     private val _arr15min = MutableLiveData<List<UpDownDataSet>>()
     val arr15min : LiveData<List<UpDownDataSet>>
     get() = _arr15min
@@ -37,6 +38,12 @@ class MainViewModel :ViewModel() {
     private val _arr45min = MutableLiveData<List<UpDownDataSet>>()
     val arr45min : LiveData<List<UpDownDataSet>>
         get() = _arr45min
+
+    private val _arr1hour = MutableLiveData<List<UpDownDataSet>>()
+    val arr1hour : LiveData<List<UpDownDataSet>>
+    get() = _arr1hour
+
+
 
     fun getAllInterestCoinData() = viewModelScope.launch{
 
@@ -68,6 +75,12 @@ class MainViewModel :ViewModel() {
     }
 
 
+
+    //fun findDataOfCoinInfoSEE
+    //coininfosee의 데이터를 찾아서 보여주거나, 식별하는 함수이다.
+
+
+
     //PriceChangeFragment
     //1.우리가 관심있다고 선택한 코인 리스트를 가져옴
     //2.관심있다고 선택한 코인 리스트를 반복분을 통해 하나씩 가져옴
@@ -86,6 +99,7 @@ class MainViewModel :ViewModel() {
         val arr15min = ArrayList<UpDownDataSet>()
         val arr30min = ArrayList<UpDownDataSet>()
         val arr45min = ArrayList<UpDownDataSet>()
+        val arr1hour = ArrayList<UpDownDataSet>()
 
         //2.관심있다고 선택한 코인 리스트를 반복분을 통해 하나씩 가져옴
 
@@ -106,11 +120,20 @@ class MainViewModel :ViewModel() {
             {
                 //현재와 15분전의 값을 비교하기 위해 2개 이상은 있어야 한다.
 
-                val changedPrice = oneCoinData[0].price.toDouble() - oneCoinData[1].price.toDouble()
+                //변동률을 구하기 위한 식이다.
+                val changedPrice = ((oneCoinData[0].price.toDouble() - oneCoinData[1].price.toDouble())/oneCoinData[1].price.toDouble())*100
+                //값을 구하면, 이를 string으로 바꿔준 뒤, 소수 둘째자리까지 보여준다.
+                val toUpDownDataSet = String.format("%.2f",changedPrice)
                 val UpDownDataSet = UpDownDataSet(
                     coinName,
-                    changedPrice.toString()
+                    toUpDownDataSet
                 )
+                //기존에 사용했던 코드
+//                val changedPrice = oneCoinData[0].price.toDouble() - oneCoinData[1].price.toDouble()
+//                val UpDownDataSet = UpDownDataSet(
+//                    coinName,
+//                    changedPrice.toString()
+//                )
                 //반복문이 나올때마다 업데이트를 해준다.
 
                 arr15min.add(UpDownDataSet)
@@ -120,10 +143,12 @@ class MainViewModel :ViewModel() {
             {
 
                 //현재와 30분전의 값을 비교하기 위해 3개 이상은 있어야 한다.
-                val changedPrice = oneCoinData[0].price.toDouble() - oneCoinData[2].price.toDouble()
+                val changedPrice = ((oneCoinData[0].price.toDouble() - oneCoinData[2].price.toDouble())/oneCoinData[2].price.toDouble())*100
+                //값을 구하면, 이를 string으로 바꿔준 뒤, 소수 둘째자리까지 보여준다.
+                val toUpDownDataSet = String.format("%.2f",changedPrice)
                 val UpDownDataSet = UpDownDataSet(
                     coinName,
-                    changedPrice.toString()
+                    toUpDownDataSet
                 )
                 //반복문이 나올때마다 업데이트를 해준다.
 
@@ -134,13 +159,28 @@ class MainViewModel :ViewModel() {
             if(size>3)
             {
                 //현재와 45분전의 값을 비교하기 위해 4개 이상은 있어야 한다.
-                val changedPrice = oneCoinData[0].price.toDouble() - oneCoinData[3].price.toDouble()
+                val changedPrice = ((oneCoinData[0].price.toDouble() - oneCoinData[3].price.toDouble())/oneCoinData[3].price.toDouble())*100
+                //값을 구하면, 이를 string으로 바꿔준 뒤, 소수 둘째자리까지 보여준다.
+                val toUpDownDataSet = String.format("%.2f",changedPrice)
                 val UpDownDataSet = UpDownDataSet(
                     coinName,
-                    changedPrice.toString()
+                    toUpDownDataSet
                 )
 
                 arr45min.add(UpDownDataSet)
+            }
+            if(size>4)
+            {
+                //현재와 1시간전의 값을 비교하기 위해 4개 이상은 있어야 한다.
+                val changedPrice = ((oneCoinData[0].price.toDouble() - oneCoinData[4].price.toDouble())/oneCoinData[4].price.toDouble())*100
+                //값을 구하면, 이를 string으로 바꿔준 뒤, 소수 둘째자리까지 보여준다.
+                val toUpDownDataSet = String.format("%.2f",changedPrice)
+                val UpDownDataSet = UpDownDataSet(
+                    coinName,
+                    toUpDownDataSet
+                )
+
+                arr1hour.add(UpDownDataSet)
             }
 
         }
@@ -150,9 +190,10 @@ class MainViewModel :ViewModel() {
         //스레드 관련 오류가 뜨면 이 코드를 써보자.
         withContext(Dispatchers.Main) {
     //반복문이 다 끝나면 데이터를 실질적으로 넣어준다.
-    _arr15min.value = arr15min
-    _arr30min.value = arr30min
-    _arr45min.value = arr45min
+            _arr15min.value = arr15min
+            _arr30min.value = arr30min
+            _arr45min.value = arr45min
+            _arr1hour.value = arr1hour
 }
 
 

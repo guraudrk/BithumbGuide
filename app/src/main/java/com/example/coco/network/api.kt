@@ -20,4 +20,7 @@ interface api {
     suspend fun getRecentCoinPrice(@Path("coin") coin : String) : RecentCoinPriceList
 
 
+
+
+
 }
