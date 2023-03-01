@@ -12,4 +12,8 @@ class NetWorkRepository {
     suspend fun getCurrentCoinList() = client.getCurrentCoinList()
 
     suspend fun getInterestCoinPriceData(coin : String) = client.getRecentCoinPrice(coin)
+
+
+    //입출금 지원에 대해 데이터를 가져와주는 함수
+    suspend fun getAssetStatusData() = client.getAssetStatus()
 }

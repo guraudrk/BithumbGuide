@@ -1,5 +1,6 @@
 package com.example.coco.network
 
+import com.example.coco.network.model.AssetStatusList
 import com.example.coco.network.model.CurrentPriceList
 import com.example.coco.network.model.RecentCoinPriceList
 import retrofit2.http.GET
@@ -19,7 +20,11 @@ interface api {
     @GET("public/transaction_history/{coin}_KRW")
     suspend fun getRecentCoinPrice(@Path("coin") coin : String) : RecentCoinPriceList
 
-
+    //입출금지원현황을 알기 위한 코드
+    //https://apidocs.bithumb.com/reference/%EC%9E%85%EC%B6%9C%EA%B8%88-%EC%A7%80%EC%9B%90-%ED%98%84%ED%99%A9-all
+    //https://api.bithumb.com/public/assetsstatus/ALL
+    @GET("public/assetsstatus/ALL")
+    suspend fun getAssetStatus() : AssetStatusList
 
 
 

@@ -75,7 +75,7 @@ class CoinInfoSeeFragment : Fragment() {
 
         viewModel.getCurrentCoinList()
         binding.btnSearch.setOnClickListener {
-            //리스트 갱신
+            //리스트 초기화
             binding.openingPrice.text = ""
             binding.closingPrice.text = ""
             binding.minPrice.text = ""
