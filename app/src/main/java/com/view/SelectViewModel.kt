@@ -1,5 +1,6 @@
 package com.view
 
+import android.widget.ListView
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -89,6 +90,7 @@ class SelectViewModel : ViewModel() {
     //체결내역에 관한 정보를 가져오는 코루틴을 정의한다.
     fun getInterestCoinPriceData(coin: String) = viewModelScope.launch(Dispatchers.IO) {
         val result = netWorkRepository.getInterestCoinPriceData(coin)
+        currentPriceResultList = ArrayList()
 
 
         //함수를 호출할 때마다 새롭게 정의해야 데이터가 쌓이지 않는다.
@@ -105,7 +107,9 @@ class SelectViewModel : ViewModel() {
 
             val gsonFromJson = gson.fromJson(gsonToJson, RecentPriceData::class.java)
 
-            val tradeHistoryList1 = TradeHistoryResult(coin, gsonFromJson)
+
+            //listof을 통해 list를 생성하고, gsonfromjson을 감싼다.
+            val tradeHistoryList1 = TradeHistoryResult(coin, listOf(gsonFromJson)  )
 
             //우리가 정의한 리스트에 값을 추가한다.
             tradeHistoryList.add(tradeHistoryList1)

@@ -61,7 +61,7 @@ class TradeHistoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //코인의 리스트를 가져온다.
-        viewModel1.getAllInterestCoinData()
+        viewModel.getCurrentCoinList()
 
 
         //현재가 조회를 누르면 생기는 일
@@ -81,14 +81,17 @@ class TradeHistoryFragment : Fragment() {
 
             //코인 이름에 관한 체결 내역 관련 정보를 받아오고,데이터를 파싱한다.
 
-            //코인 이름이 데이터에 있다면 보여준다.
 
+            val cointoupper = coin1.toUpperCase()
+
+            //이렇게 미리 정의를 해 줘야 currentPriceResultList가 정의가 미리 되서 오류가 안난다.
+            viewModel.getInterestCoinPriceData(cointoupper)
             for (coin in viewModel.currentPriceResultList) {
                 //입력한 코인의 이름을 인스턴스로 받아온다.(문자는 반드시 대문자로!!)
 
 
 
-                val cointoupper = coin1.toUpperCase()
+
                 if (coin.coinName.equals(cointoupper)) {
                     viewModel.getInterestCoinPriceData(cointoupper)
 

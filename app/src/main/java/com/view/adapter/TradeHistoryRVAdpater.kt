@@ -38,13 +38,14 @@ class TradeHistoryRVAdpater(val context : Context, val coinPriceList : List<Trad
 
         //holder와 리스트의 정보를 연결한다.
 
-        holder.transactionDate.text = coinPriceList[position].coinInfo.transaction_date
-        holder.unitsTraded.text = coinPriceList[position].coinInfo.units_traded
-        holder.price1.text = coinPriceList[position].coinInfo.price
-        holder.total.text = coinPriceList[position].coinInfo.total
+        //coinPriceList도 list이고 coinInfo도 list이다.
+        holder.transactionDate.text = coinPriceList[position].coinInfo[position].transaction_date
+        holder.unitsTraded.text = coinPriceList[position].coinInfo[position].units_traded
+        holder.price1.text = coinPriceList[position].coinInfo[position].price
+        holder.total.text = coinPriceList[position].coinInfo[position].total
 
         //type을 통해 샀는지 팔았는지를 판단해서 뷰의 색을 바꾼다.
-        val buyorsell = coinPriceList[position].coinInfo.type
+        val buyorsell = coinPriceList[position].coinInfo[position].type
 
         if(buyorsell=="bid"){
             //매수일 때

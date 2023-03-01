@@ -95,12 +95,7 @@ class CoinInfoSeeFragment : Fragment() {
             if(getCoinName.equals("")||getCoinName==null){
                 Toast.makeText(context,"공백입니다. 코인이름을 입력해주세요.",Toast.LENGTH_SHORT).show()
             }
-            //입력값이 공백이 아니라면 코인의 이름을 대문자 처리한다. 이는 api의 주소 중 코인의 부분이 대문자이기 때문이다.
-           //공백이 아니라면 원하는 작업을 처리해준다.
-//            else {
-//                val cointoupper = getCoinName.toUpperCase()
-//
-//            }
+
                 //일치하는 이름이 있다면 이름에 관한 정보를 보여준다. binding을 통해 text정보를 보여준다.
              for(coin in viewModel.currentPriceResultList)
                 {
