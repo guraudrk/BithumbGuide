@@ -77,7 +77,7 @@ class TradeHistoryFragment : Fragment() {
 
 
             if(coin1.equals("")||coin1==null){
-                Toast.makeText(context,"공백입니다. 코인이름을 입력해주세요.", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context,"공백입니다. 코인이름을 입력해주세요.", Toast.LENGTH_SHORT).show()
             }
 
 

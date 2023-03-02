@@ -97,7 +97,7 @@ class CoinInfoSeeFragment : Fragment() {
 
             //입력값 체크하기
             if(getCoinName.equals("")||getCoinName==null){
-                Toast.makeText(context,"공백입니다. 코인이름을 입력해주세요.",Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context,"공백입니다. 코인이름을 입력해주세요.",Toast.LENGTH_SHORT).show()
             }
 
                 //일치하는 이름이 있다면 이름에 관한 정보를 보여준다. binding을 통해 text정보를 보여준다.
@@ -119,7 +119,7 @@ class CoinInfoSeeFragment : Fragment() {
                      binding.fluctate24H.text = coin.coinInfo.fluctate_24H + "원"
                      binding.fluctateRate24H.text = coin.coinInfo.fluctate_rate_24H + "%"
                      //리스트에 있는지없는지를 확인해주는 변수를 설정한다.
-                     Toast.makeText(context,"정보 불러오기에 성공했습니다.",Toast.LENGTH_SHORT).show()
+//                     Toast.makeText(context,"정보 불러오기에 성공했습니다.",Toast.LENGTH_SHORT).show()
                      inornot = true
                  }
                 }
@@ -127,7 +127,7 @@ class CoinInfoSeeFragment : Fragment() {
             //리스트에 있는지 없는지에 따라 해당 text를 적을지 안적을지 정한다.
             if(inornot==false)
             {
-                Toast.makeText(context,"빗썸에 없는 코인이거나 철자가 틀렸습니다.",Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context,"빗썸에 없는 코인이거나 철자가 틀렸습니다.",Toast.LENGTH_SHORT).show()
             }
 
 

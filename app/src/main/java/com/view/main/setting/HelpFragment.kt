@@ -80,7 +80,7 @@ class HelpFragment : Fragment() {
 
             //공백인지 아닌지 체크
             if(coinName.equals("")||coinName==null){
-                Toast.makeText(context,"공백입니다. 코인이름을 입력해주세요.", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context,"공백입니다. 코인이름을 입력해주세요.", Toast.LENGTH_SHORT).show()
             }
 
 
@@ -121,7 +121,7 @@ class HelpFragment : Fragment() {
 
             if(inornot==false)
             {
-                Toast.makeText(context,"빗썸에 없는 코인이거나 철자가 틀렸습니다.",Toast.LENGTH_SHORT).show()
+//                Toast.makeText(context,"빗썸에 없는 코인이거나 철자가 틀렸습니다.",Toast.LENGTH_SHORT).show()
             }
         }
 
