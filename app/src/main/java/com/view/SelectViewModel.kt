@@ -1,6 +1,9 @@
 package com.view
 
+import android.content.Context
 import android.widget.ListView
+import android.widget.Toast
+import androidx.datastore.preferences.protobuf.Api
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -11,6 +14,8 @@ import com.example.coco.dataModel.CurrentPriceResult
 import com.example.coco.dataModel.RecentPriceData
 import com.example.coco.dataModel.dataStore.MyDataStore
 import com.example.coco.dataModel.TradeHistoryResult
+import com.example.coco.network.RetrofitInstance
+import com.example.coco.network.api
 import com.example.coco.network.repository.DBRepository
 import com.example.coco.network.repository.NetWorkRepository
 import com.google.gson.Gson
@@ -24,6 +29,10 @@ import timber.log.Timber
 //아직은 이해가 잘 되지 않으니 강의의 PART1을 잘 보도록 하자.
 
 class SelectViewModel : ViewModel() {
+
+
+    //레트로핏 인스턴스를 받아온다.
+    private val retrofitInstance  = RetrofitInstance.getInstance().create(api::class.java)
 
 
     private val netWorkRepository = NetWorkRepository()
@@ -50,8 +59,8 @@ class SelectViewModel : ViewModel() {
         get() = _saved
 
     // 체결 내역의 데이터 변화를 관찰하는 LiveData
-    private val _tradeHistoryResult = MutableLiveData<List<TradeHistoryResult>>()
-    val tradeHistoryResult: LiveData<List<TradeHistoryResult>>
+    private val _tradeHistoryResult = MutableLiveData<List<RecentPriceData>>()
+    val tradeHistoryResult: LiveData<List<RecentPriceData>>
         get() = _tradeHistoryResult
 
 
@@ -89,40 +98,51 @@ class SelectViewModel : ViewModel() {
 
     //체결내역에 관한 정보를 가져오는 코루틴을 정의한다.
     fun getInterestCoinPriceData(coin: String) = viewModelScope.launch(Dispatchers.IO) {
-        val result = netWorkRepository.getInterestCoinPriceData(coin)
-        currentPriceResultList = ArrayList()
+
+        //try catch를 통해 오류를 통제한다.
+
+        try{
+            //post 변수를 통해 api를 따온다.
+            val post = retrofitInstance.getRecentCoinPrice(coin)
+
+            val result = netWorkRepository.getInterestCoinPriceData(coin)
+            currentPriceResultList = ArrayList()
 
 
-        //함수를 호출할 때마다 새롭게 정의해야 데이터가 쌓이지 않는다.
-        tradeHistoryList = ArrayList()
+            //함수를 호출할 때마다 새롭게 정의해야 데이터가 쌓이지 않는다.
+            tradeHistoryList = ArrayList()
 
+            _tradeHistoryResult.postValue(post.data)
+            //데이터를 원하는 대로 가공한다.
+        }
+        catch (e: java.lang.Exception) {
 
-        //데이터를 원하는 대로 가공한다.
+        }
+//        }
+
 
 
         //예외를 잘 처리하기 위해 try-catch를 사용하면 된다.
-        try {
-            val gson = Gson()
-            val gsonToJson = gson.toJson(result.data)
-
-            val gsonFromJson = gson.fromJson(gsonToJson, RecentPriceData::class.java)
-
-
-            //listof을 통해 list를 생성하고, gsonfromjson을 감싼다.
-            val tradeHistoryList1 = TradeHistoryResult(coin, listOf(gsonFromJson)  )
-
-            //우리가 정의한 리스트에 값을 추가한다.
-            tradeHistoryList.add(tradeHistoryList1)
-            Timber.d("체결내역 불러오기 성공")
-        } catch (e: java.lang.Exception) {
-            Timber.d("체결내역을 가져오는데 오류가 발생")
-
-
-        }
+//        try {
+//            val gson = Gson()
+//            val gsonToJson = gson.toJson(post.data)
+//            val gsonFromJson = gson.fromJson(gsonToJson, RecentPriceData::class.java)
+//
+//
+//            //listof을 통해 list를 생성하고, gsonfromjson을 감싼다.
+//            val tradeHistoryList1 = TradeHistoryResult(coin,gsonFromJson)
+//
+//            //우리가 정의한 리스트에 값을 추가한다.
+//            tradeHistoryList.add(tradeHistoryList1)
+//            Timber.d("체결내역 불러오기 성공")
+//        } catch (e: java.lang.Exception) {
+//            Timber.d("체결내역을 가져오는데 오류가 발생")
+//        }
 
         //최종적으로 라이브데이터에 저장한다.
         //postValue를 설정하지 않으면 오류가 난다.
-        _tradeHistoryResult.postValue(tradeHistoryList)
+//        _tradeHistoryResult.postValue(tradeHistoryList)
+
 
     }
 

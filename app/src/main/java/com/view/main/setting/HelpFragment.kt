@@ -64,6 +64,8 @@ class HelpFragment : Fragment() {
 
         //버튼 클릭시 나오는 현상
         helpButton.setOnClickListener {
+            inornot = false
+
             //리스트 초기화
             binding.depositStatus.text = ""
             binding.withdrawalStatus.text = ""

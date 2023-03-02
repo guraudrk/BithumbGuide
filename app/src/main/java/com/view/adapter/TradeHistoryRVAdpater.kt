@@ -9,9 +9,10 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coco.R
+import com.example.coco.dataModel.RecentPriceData
 import com.example.coco.dataModel.TradeHistoryResult
 
-class TradeHistoryRVAdpater(val context : Context, val coinPriceList : List<TradeHistoryResult>) :
+class TradeHistoryRVAdpater(val context : Context, val coinPriceList : List<RecentPriceData>) :
     RecyclerView.Adapter<TradeHistoryRVAdpater.ViewHolder>(){
 
     inner class ViewHolder(view : View) : RecyclerView.ViewHolder(view){
@@ -39,13 +40,13 @@ class TradeHistoryRVAdpater(val context : Context, val coinPriceList : List<Trad
         //holder와 리스트의 정보를 연결한다.
 
         //coinPriceList도 list이고 coinInfo도 list이다.
-        holder.transactionDate.text = coinPriceList[position].coinInfo[position].transaction_date
-        holder.unitsTraded.text = coinPriceList[position].coinInfo[position].units_traded
-        holder.price1.text = coinPriceList[position].coinInfo[position].price
-        holder.total.text = coinPriceList[position].coinInfo[position].total
+        holder.transactionDate.text = coinPriceList[position].transaction_date
+        holder.unitsTraded.text = coinPriceList[position].units_traded
+        holder.price1.text = coinPriceList[position].price
+        holder.total.text = coinPriceList[position].total
 
         //type을 통해 샀는지 팔았는지를 판단해서 뷰의 색을 바꾼다.
-        val buyorsell = coinPriceList[position].coinInfo[position].type
+        val buyorsell = coinPriceList[position].type
 
         if(buyorsell=="bid"){
             //매수일 때

@@ -17,7 +17,7 @@
 
         <EditText
             android:textSize="12dp"
-            android:hint="코인 이름은 반드시 영어 대문자로 입력해주세요.(예:BTC)"
+            android:hint="코인 이름은 반드시 영어로 입력해주세요.(예:BTC)"
             android:id="@+id/coin_nm"
             android:layout_width="300dp"
             android:layout_height="wrap_content"

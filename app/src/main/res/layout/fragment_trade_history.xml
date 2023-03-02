@@ -18,7 +18,7 @@
 
         <EditText
             android:textSize="12dp"
-            android:hint="코인 이름은 반드시 영어 대문자로 입력해주세요.(예:BTC)"
+            android:hint="코인 이름은 반드시 영어로 입력해주세요.(예:BTC)"
             android:id="@+id/coin_nm_history"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -57,6 +57,8 @@
         android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:stackFromBottom="true"
+            app:reverseLayout="true"
             android:id="@+id/tradeHistoryRV"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />

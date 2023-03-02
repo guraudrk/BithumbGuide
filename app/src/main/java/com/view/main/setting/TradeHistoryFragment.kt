@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout.VERTICAL
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -60,13 +61,14 @@ class TradeHistoryFragment : Fragment() {
     //체결 내역을 실제로 가져오는 거시기.
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //코인의 리스트를 가져온다.
-        viewModel.getCurrentCoinList()
 
+//코인의 리스트를 가져온다.
+        viewModel.getCurrentCoinList()
 
         //현재가 조회를 누르면 생기는 일
         binding.btnSearch.setOnClickListener {
 
+            inornot = false
             val coin1 : String = binding.coinNmHistory.text.toString()
             //이 코드 안이 문제이다!
 
@@ -105,7 +107,10 @@ class TradeHistoryFragment : Fragment() {
                         //binding을 쓴다.
 
                         //실제로 화면을 보이게 하는 코드이다.
-                        binding.tradeHistoryRV.layoutManager = LinearLayoutManager(requireContext())
+                        //layoutmanager 코드가 더 긴 이유는 요놈을 역순으로 배치했기 때문이다.
+                        binding.tradeHistoryRV.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,true)
+
+
                         inornot=true
 
                     }
@@ -115,12 +120,11 @@ class TradeHistoryFragment : Fragment() {
                     )
                 }
 
-            }
-            if(inornot==false)
-            {
-                Toast.makeText(context,"빗썸에 없는 코인이거나 철자가 틀렸습니다.", Toast.LENGTH_SHORT).show()
 
             }
+
+
+
         }
 
 
