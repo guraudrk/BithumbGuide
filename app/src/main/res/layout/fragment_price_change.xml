@@ -18,9 +18,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="15분전대비 상승률"
+                android:text="15분전대비 상승률(즐겨찾기 추가한지 15분이 지나야 합니다.)"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 />
 
@@ -35,9 +35,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="30분 전 대비 상승률"
+                android:text="30분전대비 상승률(즐겨찾기 추가한지 30분이 지나야 합니다.)"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 />
 
@@ -53,9 +53,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="45분 전 대비 상승률"
+                android:text="45분전대비 상승률(즐겨찾기 추가한지 45분이 지나야 합니다.)"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 />
 
@@ -70,9 +70,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="1시간 전 대비 상승률"
+                android:text="1시간전대비 상승률(즐겨찾기 추가한지 1시간이 지나야 합니다.)"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 />
 

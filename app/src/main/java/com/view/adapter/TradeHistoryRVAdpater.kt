@@ -49,7 +49,7 @@ class TradeHistoryRVAdpater(val context : Context, val coinPriceList : List<Rece
         val buyorsell = coinPriceList[position].type
 
         if(buyorsell=="bid"){
-            //매수일 때
+            //매수일 때 빨간색으로
             holder.background.setCardBackgroundColor(Color.parseColor("#ed2e11"))
         }
         else{

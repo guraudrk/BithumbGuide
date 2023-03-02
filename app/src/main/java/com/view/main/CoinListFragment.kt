@@ -76,9 +76,10 @@ class CoinListFragment : Fragment() {
                     unselectedList.add(item)
                 }
             }
+            setSelectedListRV()
         })
 
-        setSelectedListRV()
+
 
     }
 

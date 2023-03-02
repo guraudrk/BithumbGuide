@@ -15,6 +15,7 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:textStyle="bold"
                 android:id="@+id/transaction_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -26,6 +27,8 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:id="@+id/units_traded"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,6 +39,8 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:id="@+id/price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,6 +52,8 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 android:id="@+id/total"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -33,11 +33,11 @@ class MainActivity : AppCompatActivity() {
 
 
 
-        //설정 버튼을 누르면 설정 버튼으로 이동한다.
-        binding.setting.setOnClickListener{
-            val intent = Intent(this, SettingActivity::class.java)
-            startActivity(intent)
-        }
+//        //설정 버튼을 누르면 설정 버튼으로 이동한다.
+//        binding.setting.setOnClickListener{
+//            val intent = Intent(this, SettingActivity::class.java)
+//            startActivity(intent)
+//        }
 
 
 

@@ -35,7 +35,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp">
+        android:layout_height="60dp">
 
         <TextView
             android:textStyle="bold"
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:text="순서대로 체결 시간/개수/평균가/총 가격을 나타냅니다.\n 배경색이 파란색이면 매도,빨간색이면 매수입니다."
+            android:text="순서대로 체결 시간/개수/평균가/총 가격을 나타냅니다.\n 배경색이 파란색이면 매도,빨간색이면 매수입니다.\n(이름이 틀리거나 빗썸에 없는 코인이면 리스트가 뜨지 않습니다.)"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

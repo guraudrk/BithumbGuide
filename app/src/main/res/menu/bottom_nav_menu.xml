@@ -7,17 +7,17 @@
         android:title="즐겨찾기추가"
         android:icon="@drawable/ic_baseline_add_24"
         />
-
-    <item
-       android:id="@+id/priceChangeFragment"
-        android:title="스캘핑가이드"
-        android:icon="@drawable/baseline_show_chart_24"
-        />
     <item
         android:id="@+id/coinInfoSeeFragment"
         android:title="코인정보 검색"
         android:icon="@drawable/baseline_currency_bitcoin_24"
         />
+    <item
+       android:id="@+id/priceChangeFragment"
+        android:title="스캘핑가이드"
+        android:icon="@drawable/baseline_show_chart_24"
+        />
+
     <item
         android:id="@+id/tradeHistoryFragment"
         android:title="체결내역 검색"

@@ -18,9 +18,9 @@
                 android:id="@+id/coinName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/black"
                 android:layout_marginLeft="20dp"
                 android:text="coinName"
-                android:textColor="@color/black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -29,34 +29,36 @@
                 android:id="@+id/coinPriceUpDown"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
                 android:text="coinPriceUpDown"
+                android:layout_marginLeft="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/coinName"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
+
+
+
             <ImageView
                 android:id="@+id/likeBtn"
-                android:layout_width="0dp"
+                android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_marginEnd="21dp"
                 android:src="@drawable/star_unselected"
+                android:layout_marginRight="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/updownnumber"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/updownnumber"
+                android:id="@+id/PriceUpDown"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="254dp"
-                android:layout_marginEnd="29dp"
+                android:layout_marginStart="40dp"
                 android:text="TextView"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/likeBtn"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintStart_toEndOf="@+id/coinPriceUpDown"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.512" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,24 +1,32 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.view.main.CoinListFragment">
 
+
+
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
-                android:text="즐겨찾기한 코인"
+                android:text="즐겨찾기한 코인(추가 시 스캘핑가이드에서 확인 가능)"
                 android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
@@ -26,32 +34,32 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:id="@+id/selectedCoinRV"
                 android:layout_width="match_parent"
                 android:layout_height="330dp"
                 android:layout_marginTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="20dp"
                 android:text="즐겨찾기 하지 않은 코인"
+                android:textColor="@color/black"
                 android:textSize="15sp"
                 android:textStyle="bold"
-                android:textColor="@color/black"
-                android:layout_margin="20dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/selectedCoinRV" />
 
             <androidx.recyclerview.widget.RecyclerView
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 android:id="@+id/unSelectedCoinRV"
                 android:layout_width="match_parent"
                 android:layout_height="330dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="80dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

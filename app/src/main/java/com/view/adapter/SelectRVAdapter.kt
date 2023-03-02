@@ -25,7 +25,7 @@ class SelectRVAdapter(val context : Context, val coinPriceList : List<CurrentPri
             val likeImage : ImageView = view.findViewById(R.id.likeBtn)
 
             //코인 가격의 변동률을 보여준다.
-            val pricechange : TextView = view.findViewById(R.id.updownnumber)
+            val pricechange : TextView = view.findViewById(R.id.PriceUpDown)
         }
 
 
