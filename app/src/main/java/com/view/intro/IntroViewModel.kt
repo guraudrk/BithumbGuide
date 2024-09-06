@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.coco.dataModel.dataStore.MyDataStore
+import com.bithumbGuide.coco.dataModel.dataStore.MyDataStore
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import timber.log.Timber

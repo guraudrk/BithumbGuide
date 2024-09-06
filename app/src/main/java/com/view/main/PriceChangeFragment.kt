@@ -8,8 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.coco.R
-import com.example.coco.databinding.FragmentPriceChangeBinding
+import com.bithumbGuide.coco.databinding.FragmentPriceChangeBinding
 import com.view.adapter.PriceListUpDownRVAdapter
 
 

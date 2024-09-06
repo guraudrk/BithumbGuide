@@ -4,11 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.coco.dataModel.AssetStatus
-import com.example.coco.dataModel.AssetStatusResult
-import com.example.coco.dataModel.CurrentPriceResult
-import com.example.coco.network.model.AssetStatusList
-import com.example.coco.network.repository.NetWorkRepository
+import com.bithumbGuide.coco.dataModel.AssetStatus
+import com.bithumbGuide.coco.dataModel.AssetStatusResult
+import com.bithumbGuide.coco.network.repository.NetWorkRepository
 import com.google.gson.Gson
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -19,7 +17,7 @@ class AssetStatusModel : ViewModel() {
     private val netWorkRepository = NetWorkRepository()
 
 
-    //1.api를 받아온다.
+    //1.빗썸 api를 받아온다.
     //2.받아오는 것에 대한 데이터 구조를 정의한다. 그 뒤, 데이터를 가공한다.
     //3.받아온 것을 리스트에 저장한다.
     //3.5. LiveData를 통해 데이터가 변한 것을 감지한다.

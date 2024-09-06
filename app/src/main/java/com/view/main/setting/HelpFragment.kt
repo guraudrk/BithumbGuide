@@ -7,11 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import com.example.coco.R
-import com.example.coco.databinding.FragmentCoinInfoSeeBinding
-import com.example.coco.databinding.FragmentCoinListBinding
-import com.example.coco.databinding.FragmentHelpBinding
+import com.bithumbGuide.coco.databinding.FragmentHelpBinding
 import com.view.main.AssetStatusModel
 
 

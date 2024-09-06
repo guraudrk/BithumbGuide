@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.coco.databinding.FragmentIntro2Binding
+import com.bithumbGuide.coco.databinding.FragmentIntro2Binding
 import com.view.SelectActivity
 
 class introFragment2 : Fragment() {

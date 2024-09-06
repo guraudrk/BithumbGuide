@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.coco.databinding.ActivitySettingBinding
-import com.example.coco.service.PriceForegroundService
+import com.bithumbGuide.coco.databinding.ActivitySettingBinding
+import com.bithumbGuide.coco.service.PriceForegroundService
 
 class SettingActivity : AppCompatActivity() {
 

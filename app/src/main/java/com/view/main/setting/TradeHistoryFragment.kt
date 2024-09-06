@@ -1,26 +1,18 @@
 package com.view.main.setting
 
-import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout.VERTICAL
-import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewTreeLifecycleOwner
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.coco.R
-import com.example.coco.databinding.FragmentCoinInfoSeeBinding
-import com.example.coco.databinding.FragmentTradeHistoryBinding
-import com.example.coco.network.repository.DBRepository
-import com.example.coco.network.repository.NetWorkRepository
+import com.bithumbGuide.coco.databinding.FragmentTradeHistoryBinding
+import com.bithumbGuide.coco.network.repository.DBRepository
+import com.bithumbGuide.coco.network.repository.NetWorkRepository
 import com.view.SelectViewModel
-import com.view.adapter.SelectRVAdapter
 import com.view.adapter.TradeHistoryRVAdpater
 import com.view.main.MainViewModel
 

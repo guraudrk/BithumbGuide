@@ -7,8 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.coco.R
-import com.example.coco.dataModel.UpDownDataSet
+import com.bithumbGuide.coco.R
+import com.bithumbGuide.coco.dataModel.UpDownDataSet
 
 class PriceListUpDownRVAdapter(val context: Context, val dataSet : List<UpDownDataSet>) : RecyclerView.Adapter<PriceListUpDownRVAdapter.ViewHolder>(){
 

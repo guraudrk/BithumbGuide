@@ -11,7 +11,7 @@ import androidx.work.PeriodicWorkRequest
 import androidx.work.WorkManager
 import com.background.GetCoinPriceRecentContractedWorkManager
 import com.view.main.MainActivity
-import com.example.coco.databinding.ActivitySelectBinding
+import com.bithumbGuide.coco.databinding.ActivitySelectBinding
 import com.view.adapter.SelectRVAdapter
 import java.util.concurrent.TimeUnit
 

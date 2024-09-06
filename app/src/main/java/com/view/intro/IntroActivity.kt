@@ -8,7 +8,7 @@ import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.Observer
 import com.view.main.MainActivity
-import com.example.coco.databinding.ActivityIntroBinding
+import com.bithumbGuide.coco.databinding.ActivityIntroBinding
 
 
 //기존에는 handler를 이용해서 3초 뒤에 다른 엑티비티로 이동

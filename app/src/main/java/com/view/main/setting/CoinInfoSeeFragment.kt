@@ -4,26 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.android.volley.AuthFailureError
-import com.android.volley.Request
 import com.android.volley.RequestQueue
-import com.android.volley.Response
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import com.example.coco.databinding.FragmentCoinInfoSeeBinding
-import com.example.coco.network.repository.NetWorkRepository
+import com.bithumbGuide.coco.databinding.FragmentCoinInfoSeeBinding
+import com.bithumbGuide.coco.network.repository.NetWorkRepository
 import com.view.SelectViewModel
 import com.view.adapter.CoinInfoSeeRVAdapter
-import com.view.adapter.SelectRVAdapter
-import com.view.main.MainViewModel
-import timber.log.Timber
 
 
 class CoinInfoSeeFragment : Fragment() {

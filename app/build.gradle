@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.coco'
+    namespace 'com.bithumbGuide.coco'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.coco"
+        applicationId "com.bithumbGuide.coco"
         minSdk 26
         targetSdk 33
         versionCode 1

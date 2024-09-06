@@ -9,8 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.db.entity.InterestCoinEntity
-import com.example.coco.R
-import com.example.coco.databinding.FragmentCoinListBinding
+import com.bithumbGuide.coco.databinding.FragmentCoinListBinding
 import com.view.adapter.CoinListRVAdapater
 
 

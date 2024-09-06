@@ -2,7 +2,6 @@ package com.view.adapter
 
 import android.content.Context
 import android.graphics.Color
-import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.db.entity.InterestCoinEntity
-import com.example.coco.R
+import com.bithumbGuide.coco.R
 
 class CoinListRVAdapater (val context: Context,val dataSet : List<InterestCoinEntity>) : RecyclerView.Adapter<CoinListRVAdapater.ViewHolder>(){
 

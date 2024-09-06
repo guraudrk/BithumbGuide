@@ -6,9 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.db.entity.InterestCoinEntity
-import com.example.coco.dataModel.UpDownDataSet
-import com.example.coco.network.repository.DBRepository
-import com.example.coco.network.repository.NetWorkRepository
+import com.bithumbGuide.coco.dataModel.UpDownDataSet
+import com.bithumbGuide.coco.network.repository.DBRepository
+import com.bithumbGuide.coco.network.repository.NetWorkRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

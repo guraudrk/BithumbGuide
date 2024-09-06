@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.coco.R
-import com.example.coco.dataModel.CurrentPriceResult
+import com.bithumbGuide.coco.R
+import com.bithumbGuide.coco.dataModel.CurrentPriceResult
 
 class SelectRVAdapter(val context : Context, val coinPriceList : List<CurrentPriceResult>)
     :RecyclerView.Adapter<SelectRVAdapter.ViewHolder>(){

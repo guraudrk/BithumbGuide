@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
-import com.example.coco.R
-import com.example.coco.databinding.FragmentIntro1Binding
+import com.bithumbGuide.coco.R
+import com.bithumbGuide.coco.databinding.FragmentIntro1Binding
 
 
 class introFragment1 : Fragment() {

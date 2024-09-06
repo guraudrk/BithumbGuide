@@ -4,10 +4,9 @@ import android.content.Context
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import com.db.entity.SelectedCoinPriceEntity
-import com.example.coco.network.model.RecentCoinPriceList
-import com.example.coco.network.repository.DBRepository
-import com.example.coco.network.repository.NetWorkRepository
-import java.sql.Date
+import com.bithumbGuide.coco.network.model.RecentCoinPriceList
+import com.bithumbGuide.coco.network.repository.DBRepository
+import com.bithumbGuide.coco.network.repository.NetWorkRepository
 import java.util.Calendar
 
 
